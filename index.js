@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const Manager = require("./Lib/manager.js");
-const Engineer = require("./Lib/engineer.js")
+const Engineer = require("./Lib/engineer.js");
+const Intern = require('./Lib/intern.js')
+const fs = require("fs");
+const generateHTML = require('./generateHTML.js');
 
 const employeeArray = [];
 
@@ -87,7 +90,7 @@ function createIntern() {
             message: "What is the intern's school?"
         }
     ]).then(answers => {
-        const newintern = new intern(answers.name, answers.id, answers.email, answers.github)
+        const newintern = new Intern(answers.name, answers.id, answers.email, answers.school)
         console.log(newintern)
         employeeArray.push(newintern);
         mainMenu();
@@ -111,9 +114,23 @@ function mainMenu() {
             createIntern()
         } else {
             // call the function that will generate the HTML using the employeeArray that you have filled so far
-            
+          var results = generateHTML(employeeArray)
+            writeFile(results)
         }
     })
 }
+
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', data, err => {
+        // if there is an error 
+        if (err) {
+            console.log(err);
+            return;
+        // when the profile has been created 
+        } else {
+            console.log("Your team profile has been successfully created! Please check out the index.html")
+        }
+    })
+}; 
 
 createManager();
