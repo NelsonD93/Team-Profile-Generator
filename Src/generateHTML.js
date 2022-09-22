@@ -29,7 +29,7 @@ const generateEngineer = function (engineer) {
             <div class="card-body">
                 <p class="id">ID: ${engineer.id}</p>
                 <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="office">Office Number: ${engineer.github}</p>
+                <p class="office">Github Profile: ${engineer.github}</p>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@ const generateIntern = function (intern) {
             <div class="card-body">
                 <p class="id">ID: ${intern.id}</p>
                 <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="office">Office Number: ${intern.school}</p>
+                <p class="office">Intern's University: ${intern.school}</p>
             </div>
         </div>
     </div>
