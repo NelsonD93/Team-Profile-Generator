@@ -1,4 +1,4 @@
-const Employee = require("./Lib/employee");
+const Employee = require("../Lib/employee");
 
 const generateManager = function (manager) {
     return `
