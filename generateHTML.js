@@ -60,10 +60,12 @@ const generateHTML = (employeeArray)=> {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Team Profile Generator</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header class="header"><h1>Team Profile Generator</h1></header>
         ${
             employeeArray.map((employee)=> {
             if (employee.getRole()=== 'Manager') {
@@ -81,31 +83,4 @@ const generateHTML = (employeeArray)=> {
     </html>`
 }
 module.exports = generateHTML
-// generateHTML = (data) => {
-//     // Empty array for cards?
-//     cardArray = []
-
-//     for (let index = 0; index < array.length; index++) {
-//         const employee = data[index]
-//         const role = employee.getRole();
-
-//         if (role === 'Manager') {
-//             const managerCard = generateManager(employee);
-//             cardArray.push(managerCard)
-//         }
-
-//         if (role === 'Engineer') {
-//             const engineerCard = generateEngineer(employee);
-
-//             cardArray.push(engineerCard);
-//         }
-
-//         if (role === 'Intern') {
-//             const internCard = generateIntern(employee);
-
-//             cardArray.push(internCard);
-//         }
-        
-//     }
-// }
 
